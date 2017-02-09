@@ -4104,6 +4104,8 @@ static int cfg80211_rtw_del_virtual_intf(struct wiphy *wiphy,
 		DBG_871X(FUNC_NDEV_FMT" remove monitor interface\n", FUNC_NDEV_ARG(ndev));
 	}
 
+	if (adapter) adapter->pnetdev = NULL;
+
 exit:
 	return ret;
 }
